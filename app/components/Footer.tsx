@@ -33,13 +33,6 @@ const Socials = () => {
           );
         })}
       </ul>
-
-      <div className="text-sm block">
-        <a href="mailto:campuzanojoseph@gmail.com" target="_blank" rel="noopener noreferrer">
-          <IoMail size={16} className="inline" aria-hidden="true" />
-          <span className="ml-2">Email me</span>
-        </a>
-      </div>
     </section>
   );
 };
@@ -48,7 +41,6 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-to-bl from-indigo-900 to-black via-pink-900  text-white">
       <Container>
-        <small className="block mb-2">All opinions are my own</small>
         <Socials />
       </Container>
     </footer>

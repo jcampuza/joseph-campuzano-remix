@@ -16,7 +16,7 @@ export const PostSummary: FC<PostSummaryProps> = (props) => {
   return (
     <article className="py-8 border-b border-gray-400">
       <header className="mb-2 flex flex-col">
-        <Link to={props.href} className="text-lg font-semibold underline">
+        <Link to={props.href} className="text-lg font-mono font-semibold underline mb-2">
           {props.title}
         </Link>
 

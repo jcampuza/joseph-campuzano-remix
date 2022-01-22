@@ -1,3 +1,5 @@
+import { config } from './config';
+
 export enum SocialType {
   email = 'email',
   twitter = 'twitter',
@@ -32,5 +34,10 @@ export const socials: Social[] = [
     type: SocialType.linkedIn,
     label: 'LinkedIn',
     link: 'https://www.linkedin.com/in/josephcampuzano',
+  },
+  {
+    type: SocialType.email,
+    label: 'Email',
+    link: `mailto:${config.email}`,
   },
 ];
