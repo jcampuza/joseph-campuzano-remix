@@ -62,6 +62,8 @@ const HtmlWrapper: FC = ({ children }) => {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <Meta />
+        <Links />
         <script
           data-host="https://microanalytics.io"
           data-dnt="false"
@@ -70,8 +72,6 @@ const HtmlWrapper: FC = ({ children }) => {
           async
           defer
         ></script>
-        <Meta />
-        <Links />
       </head>
       <body className="min-h-screen bg-white">
         {children}

@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { cn } from '../lib/cn';
 import { formatDateLong } from '../lib/date';
 import { FCWithClassName } from '../lib/types';
@@ -8,7 +9,7 @@ interface PostDetailsProps {
 }
 
 export const PostDetails: FCWithClassName<PostDetailsProps> = (props) => {
-  const dateFormatted = formatDateLong(props.timestamp);
+  const dateFormatted = useMemo(() => formatDateLong(props.timestamp), [props.timestamp]);
 
   return (
     <aside className={cn(props.className)}>

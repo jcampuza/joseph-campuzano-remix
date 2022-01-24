@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-import { throttle } from '../lib/debounce-throttle';
-import { useIsMounted } from '../lib/useIsMounted';
+import { useEffect, useRef } from 'react';
 
 const getScrollPercentage = (
   el: HTMLElement | null = document.scrollingElement as HTMLElement | null,
@@ -9,39 +7,36 @@ const getScrollPercentage = (
     return 0;
   }
 
-  const scrollHeight = el.scrollHeight;
-  const scrollElClientHeight = el.clientHeight;
-  const scrollTop = el.scrollTop;
+  const { scrollHeight, clientHeight: scrollElClientHeight, scrollTop } = el;
 
   return scrollTop / (scrollHeight - scrollElClientHeight);
 };
 
 export const ScrollProgressBar = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const isMounted = useIsMounted();
+  const scrollElRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const setProgressFn = () => {
-      if (isMounted()) {
-        setScrollProgress(getScrollPercentage());
+    const scrollEl = scrollElRef.current;
+
+    const setScrollTransform = () => {
+      if (scrollEl) {
+        requestAnimationFrame(() => {
+          scrollEl.style.transform = `scaleX(${getScrollPercentage()})`;
+        });
       }
     };
 
-    const setProgressThrottled = throttle(setProgressFn, 80);
-
-    window.addEventListener('scroll', setProgressThrottled);
-
+    setScrollTransform();
+    window.addEventListener('scroll', setScrollTransform);
     return () => {
-      window.removeEventListener('scroll', setProgressThrottled);
+      window.removeEventListener('scroll', setScrollTransform);
     };
-  }, [isMounted]);
+  }, []);
 
   return (
     <div
-      className="fixed top-0 left-0 h-1 w-full bg-blue-700 origin-left transition-transform duration-200"
-      style={{
-        transform: `scaleX(${scrollProgress})`,
-      }}
+      ref={scrollElRef}
+      className="fixed top-0 left-0 h-1 w-full bg-blue-700 origin-left transition-transform duration-300 scale-x-0"
     ></div>
   );
 };
