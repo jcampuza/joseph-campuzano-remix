@@ -19,7 +19,7 @@ export default function handleRequest(
 ) {
   // Handle HTTPS Redirect in application for now
   if (request.headers.get('X-Forwarded-Proto') === 'http') {
-    return redirect(getHttpsUrl(request.url), 301);
+    return redirect(getHttpsUrl(request.url));
   }
 
   const markup = renderToString(<RemixServer context={remixContext} url={request.url} />);
