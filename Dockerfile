@@ -1,8 +1,8 @@
 # base node image
-FROM node:16-bullseye-slim as base
+FROM node:17-alpine as base
 
-# Install openssl for Prisma
-RUN apt-get update && apt-get install -y openssl
+# Install openssl for Prism
+RUN apk add --update openssl
 
 # Install all node_modules, including dev dependencies
 FROM base as deps
@@ -57,4 +57,5 @@ COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
 ADD . .
 
+EXPOSE 3000
 CMD ["npm", "run", "start"]
