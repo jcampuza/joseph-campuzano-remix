@@ -11,6 +11,10 @@ const getHttpsUrl = (url: string) => {
   return `https://${url}`;
 };
 
+const isFlyHttpForward = (request: Request) => request.headers.get('X-Forwarded-Proto') === 'http';
+
+const handleFlyHttpToHttpsRedirect = (request: Request) => redirect(getHttpsUrl(request.url), 301);
+
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
@@ -18,8 +22,8 @@ export default function handleRequest(
   remixContext: EntryContext,
 ) {
   // Handle HTTPS Redirect in application for now
-  if (request.headers.get('X-Forwarded-Proto') === 'http') {
-    return redirect(getHttpsUrl(request.url));
+  if (isFlyHttpForward(request)) {
+    return handleFlyHttpToHttpsRedirect(request);
   }
 
   const markup = renderToString(<RemixServer context={remixContext} url={request.url} />);
