@@ -13,8 +13,12 @@ export const PostDetails: FCWithClassName<PostDetailsProps> = (props) => {
 
   return (
     <aside className={cn(props.className)}>
-      <time className="block text-xs italic text-gray-700">{dateFormatted} </time>
-      <small className="block italic text-gray-600">Reading Time: {props.timeToReadMins} min</small>
+      <time className="block text-xs italic text-gray-700 dark:text-gray-200">
+        {dateFormatted}{' '}
+      </time>
+      <small className="block italic text-gray-600 dark:text-gray-100">
+        Reading Time: {props.timeToReadMins} min
+      </small>
     </aside>
   );
 };

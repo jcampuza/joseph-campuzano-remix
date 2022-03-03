@@ -73,7 +73,7 @@ const HtmlWrapper: FC = ({ children }) => {
           defer
         ></script>
       </head>
-      <body className="min-h-screen bg-white">
+      <body className="min-h-screen bg-white dark:bg-slate-900 dark:text-neutral-100 transition-colors duration-200 ease-out">
         {children}
 
         <ScrollRestoration />

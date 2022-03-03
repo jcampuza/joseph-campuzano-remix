@@ -14,7 +14,7 @@ interface PostSummaryProps {
 
 export const PostSummary: FC<PostSummaryProps> = (props) => {
   return (
-    <article className="py-8 border-b border-gray-400">
+    <article className="py-8 border-b border-gray-400 dark:border-neutral-400">
       <header className="mb-2 flex flex-col">
         <Link to={props.href} className="text-lg font-mono font-semibold underline mb-2">
           {props.title}
@@ -23,7 +23,7 @@ export const PostSummary: FC<PostSummaryProps> = (props) => {
         <PostDetails timeToReadMins={props.timeToReadMins} timestamp={props.timestamp} />
       </header>
 
-      <p className="text-gray-800 mb-2">{props.preview}</p>
+      <p className="text-gray-800 dark:text-gray-200 mb-2">{props.preview}</p>
 
       <PostTags tags={props.tags} />
     </article>

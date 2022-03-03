@@ -19,7 +19,7 @@ export const IconForSocialType = {
 const Socials = () => {
   return (
     <section>
-      <ul className="text-sm flex space-x-6 mb-4">
+      <ul className="text-sm flex space-x-6">
         {socials.map((social) => {
           const Icon = IconForSocialType[social.type];
 
@@ -39,7 +39,7 @@ const Socials = () => {
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-bl from-indigo-900 to-black via-pink-900  text-white">
+    <footer className="bg-gradient-to-bl from-pink-900 to-indigo-900 dark:via-neutral-900  text-white">
       <Container>
         <Socials />
       </Container>

@@ -36,7 +36,7 @@ export const ScrollProgressBar = () => {
   return (
     <div
       ref={scrollElRef}
-      className="fixed top-0 left-0 h-1 w-full bg-blue-700 origin-left transition-transform duration-300 scale-x-0"
+      className="fixed top-0 left-0 h-1 w-full bg-blue-700 dark:bg-pink-700 origin-left transition-transform duration-300 scale-x-0"
     ></div>
   );
 };

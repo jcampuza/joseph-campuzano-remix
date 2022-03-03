@@ -43,7 +43,10 @@ export default function PostLayout() {
 
           <PostTags tags={post.tags} />
         </header>
-        <section className="prose my-8" dangerouslySetInnerHTML={{ __html: post.html }}></section>
+        <section
+          className="prose dark:prose-invert dark:prose-headings:text-gray-100 dark:text-gray-200 my-8"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        ></section>
       </article>
     </Layout>
   );
