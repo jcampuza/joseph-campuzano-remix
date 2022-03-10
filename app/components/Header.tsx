@@ -1,4 +1,6 @@
 import { Link } from 'remix';
+import { ClientOnly } from '~/components/ClientOnly';
+import { ThemeToggle } from '~/components/ThemeToggle';
 import { cn } from '../lib/cn';
 import { FCWithClassName } from '../lib/types';
 import { Container } from './Container';
@@ -11,10 +13,11 @@ export const Header: FCWithClassName = (props) => {
         props.className,
       )}
     >
-      <Container>
+      <Container className="flex justify-between">
         <Link to="/" className="text-md font-mono">
           Joseph Campuzano
         </Link>
+        <ClientOnly>{() => <ThemeToggle />}</ClientOnly>
       </Container>
     </header>
   );

@@ -78,7 +78,7 @@ const HtmlWrapper: FC = ({ children }) => {
 
         <ScrollRestoration />
         <Scripts />
-        {isDev && <LiveReload />}
+        <LiveReload />
       </body>
     </html>
   );
