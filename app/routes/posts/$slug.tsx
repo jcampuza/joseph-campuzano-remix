@@ -1,13 +1,14 @@
-import { MetaFunction, useLoaderData } from 'remix';
+import { DataFunctionArgs, MetaFunction } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 import { Layout } from '~/components/Layout';
 import { PostDetails } from '~/components/PostDetails';
 import { PostTags } from '~/components/PostTags';
 import { ScrollProgressBar } from '~/components/ScrollProgressBar';
 import { getDefaultRouteMetadata } from '~/config/meta';
 import { getPost } from '~/lib/posts';
-import { InferRemixLoaderType, LoaderFunctionArgs } from '~/lib/types';
+import { InferAwaitedReturn } from '~/lib/types';
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params }: DataFunctionArgs) => {
   try {
     return await getPost(params.slug as string);
   } catch {
@@ -17,7 +18,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   }
 };
 
-export const meta: MetaFunction = ({ data }: { data: InferRemixLoaderType<typeof loader> }) => {
+export const meta: MetaFunction = ({ data }: { data: InferAwaitedReturn<typeof loader> }) => {
   return getDefaultRouteMetadata({
     titlePrefix: data.title,
     description: data.preview,
@@ -25,7 +26,7 @@ export const meta: MetaFunction = ({ data }: { data: InferRemixLoaderType<typeof
 };
 
 export default function PostLayout() {
-  const post = useLoaderData<InferRemixLoaderType<typeof loader>>();
+  const post = useLoaderData<InferAwaitedReturn<typeof loader>>();
 
   return (
     <Layout>

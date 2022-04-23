@@ -1,5 +1,4 @@
-import { FC } from 'react';
-import { Link } from 'remix';
+import { Link } from '@remix-run/react';
 import { PostDetails } from './PostDetails';
 import { PostTags } from './PostTags';
 
@@ -12,7 +11,7 @@ interface PostSummaryProps {
   timeToReadMins: number;
 }
 
-export const PostSummary: FC<PostSummaryProps> = (props) => {
+export const PostSummary = (props: PostSummaryProps) => {
   return (
     <article className="py-8 border-b border-gray-400 dark:border-neutral-400">
       <header className="mb-2 flex flex-col">

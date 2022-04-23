@@ -1,10 +1,11 @@
-import { HeadersFunction, useLoaderData } from 'remix';
+import { DataFunctionArgs, HeadersFunction } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 import { Layout } from '~/components/Layout';
 import { PostSummary } from '~/components/PostSummary';
 import { getPosts } from '~/lib/posts';
-import { InferRemixLoaderType, LoaderFunctionArgs } from '~/lib/types';
+import { InferAwaitedReturn } from '~/lib/types';
 
-export const loader = async (ctx: LoaderFunctionArgs) => {
+export const loader = async (ctx: DataFunctionArgs) => {
   const posts = await getPosts();
 
   return posts;
@@ -17,7 +18,7 @@ export const headers: HeadersFunction = () => {
 };
 
 export default function Index() {
-  const posts = useLoaderData<InferRemixLoaderType<typeof loader>>();
+  const posts = useLoaderData<InferAwaitedReturn<typeof loader>>();
 
   return (
     <Layout>

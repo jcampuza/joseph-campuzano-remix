@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React from 'react';
 import { Container } from './Container';
 import { Footer } from './Footer';
 import { Header } from './Header';
@@ -15,7 +15,7 @@ const Subheader = () => {
   );
 };
 
-export const Layout: FC = (props) => {
+export const Layout = (props: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col justify-start">
       <Header />

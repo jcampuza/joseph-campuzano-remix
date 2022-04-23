@@ -1,4 +1,4 @@
-import { redirect } from 'remix';
+import { redirect } from '@remix-run/node';
 
 export function isFlyHttpForward(request: Request) {
   if (process.env.NODE_ENV === 'development') {

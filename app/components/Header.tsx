@@ -1,11 +1,14 @@
-import { Link } from 'remix';
+import { Link } from '@remix-run/react';
 import { ClientOnly } from '~/components/ClientOnly';
 import { ThemeToggle } from '~/components/ThemeToggle';
 import { cn } from '../lib/cn';
-import { FCWithClassName } from '../lib/types';
 import { Container } from './Container';
 
-export const Header: FCWithClassName = (props) => {
+interface HeaderProps {
+  className?: string;
+}
+
+export const Header = (props: HeaderProps) => {
   return (
     <header
       className={cn(

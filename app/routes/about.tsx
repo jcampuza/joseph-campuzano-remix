@@ -1,4 +1,4 @@
-import { MetaFunction } from 'remix';
+import { MetaFunction } from '@remix-run/node';
 import { Layout } from '~/components/Layout';
 import { getDefaultRouteMetadata } from '~/config/meta';
 

@@ -1,16 +1,14 @@
-import { FC } from 'react';
+import { ErrorBoundaryComponent, LinksFunction, MetaFunction } from '@remix-run/node';
 import {
-  ErrorBoundaryComponent,
   Links,
-  LinksFunction,
   LiveReload,
   Meta,
-  MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
   useCatch,
-} from 'remix';
+} from '@remix-run/react';
+import React from 'react';
 import { defaultMetadata } from '~/config/meta';
 import { Layout } from './components/Layout';
 import { MyLink } from './components/Link';
@@ -56,7 +54,7 @@ export const meta: MetaFunction = ({ location, data }) => {
   };
 };
 
-const HtmlWrapper: FC = ({ children }) => {
+const HtmlWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <head>
