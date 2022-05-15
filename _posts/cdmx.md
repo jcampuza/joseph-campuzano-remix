@@ -11,7 +11,7 @@ Hello! This will be a shorter piece, but I just wanted to share a little move I 
 
 I plan to be here at least short-term for the next few months, to Ciudad de México and I'm super excited about it. To be clear when I say move, I'm staying in a long-term AirBnB, and still own my apartment in Dallas, TX. But for all intents and purposes, I am situated here, as I write this in a small café in CDMX.
 
-### My first week here
+## My first week here
 
 As I write this, I've been here for about a week now. My flight back to the United States is booked for March 31st so I've still got plenty of time to find things to do and experiences to... well, experience. I feel like I've already fallen into a bit of a groove. That can be both a good thing and bad depending on how you look at it.
 
@@ -23,7 +23,7 @@ My evenings have been spent on a multitude of things. The first order of busines
 
 I think I've pretty quickly settled into a normal weekday life, and I'm definitely not a big party animal so I don't take part in many of the things most people expect foreigners to be doing. That being drinking, partying, etc. I have nothing against those activities but they don't interest me as much anymore. I've found my tolerance and lust for drinking and partying is much lower nowadays, to the point where I regularly go months without it, nor a desire to take part.
 
-### What's Next
+## What's Next
 
 I think this is becoming a trend I may keep up, ending my writings with what is to come. Or maybe it's just a natural way to end? Anyways...
 

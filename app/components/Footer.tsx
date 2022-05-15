@@ -25,7 +25,12 @@ const Socials = () => {
 
           return (
             <li key={social.type}>
-              <a href={social.link} target="_blank" rel="noopener noreferrer">
+              <a
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
                 <Icon size={16} className="inline" aria-hidden="true" />
                 <span className="sr-only sm:not-sr-only sm:ml-2">{social.label}</span>
               </a>

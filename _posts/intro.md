@@ -11,11 +11,11 @@ Welcome to my humble blog.
 
 My name is Joseph, as you probably can see from the header on the site (at least at the time of writing). And I plan for this site to contain my ramblings.
 
-### Why a blog?
+## Why a blog?
 
 I think about a lot of things, just like everybody else. But recently I thought I might as well write down the things I think of that I consider important. Like any other person I could record these in a notebook or some sort, but I decided I'd make it a bit more permanent by putting them on a blog. Besides, somebody else might find my thoughts interesting!
 
-### About Me
+## About Me
 
 A little bit of fun facts about me to kick things off.
 
@@ -37,7 +37,7 @@ I went to school there for a year before transferring right back to University o
 - Mathematics
 - (End) Computer Science
 
-### Where do we go from here?
+## Where do we go from here?
 
 I plan to blog and maybe sometimes rant about the things that go on in my mind. For example my experience learning Spanish, travelling, code, failures and successes, etc.
 

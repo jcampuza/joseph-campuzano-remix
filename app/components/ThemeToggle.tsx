@@ -15,13 +15,17 @@ export const ThemeToggle = () => {
 
   return (
     <div>
-      <label className="cursor-pointer">
-        <input
-          className="sr-only"
-          type="checkbox"
-          checked={theme === 'dark'}
-          onChange={handleThemeChange}
-        />
+      <label className="cursor-pointer block focus-within:outline">
+        <span className="sr-only">
+          Theme toggle
+          <input
+            className="sr-only"
+            type="checkbox"
+            name="theme"
+            checked={theme === 'dark'}
+            onChange={handleThemeChange}
+          />
+        </span>
         {theme === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
       </label>
     </div>
